@@ -1,7 +1,7 @@
 //Variaveis e constantes
 const popup = document.querySelector("#popup")
 const pcont = document.querySelector("#textoContador")
-const cooldownChamado = 600 //Variavel que dita o tempo do cooldown (em segundos)
+const cooldownChamado = 30 //Variavel que dita o tempo do cooldown (em segundos)
 //Muda o texto do elemento com id #sala para mostrar qual sala o usuário está
 document.querySelector('#sala').textContent = `Você está na sala: ${localStorage.getItem('sala')}`
 

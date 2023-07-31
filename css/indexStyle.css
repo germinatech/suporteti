@@ -127,29 +127,28 @@ hr {
 
 /* Contador */
 #contador{
-    display: inline;
     position: absolute;
     bottom: 0px;
 }
 #contador p{
     display: none;
-    font-size: 150%;
+    font-size: 1em;
     color: #fff;
     font-weight: bold;
 }
 
 /* Pop-Up */
 #popup{
-    width: 20%;
-    height: 25%;
+    width: 40%;
+    height: 50%;
     background: #fff;
     border-radius: 6px;
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1);
+    left: 50%; 
+    transform: translate(-50%, -50%) ;
     text-align: center;
-    padding: 0 30px 30px;
+    /* padding: 0 30px 30px; */
     color: #333;
     display: none;
     transition: transform 0.4s, top 0,4s;
@@ -168,21 +167,16 @@ hr {
 }
 
 #popup img {
-    width: 20%;
-    margin-top: -10%;
-    border-radius: 50%;
+    width: 20px;
+    margin-top: -10%; 
+    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 #popup h2{
-    font-size: 38px;
-    font-weight: 50px;
-    margin: 30px 0 10px;
+    font-size: 1.2rem;
 }
 
-#popup p{
-    font-size: 20px;
-}
 
 #popup button{
     width: 100%;
@@ -199,11 +193,11 @@ hr {
 
 } 
 
-@media (max-width: 1250px){
+/* @media (max-width: 1250px){
     #contador{
         display: none;
-    }
-}
+    } 
+} */
 /* tablet  */
 @media (max-width: 768px){
     /* .pbtn{
