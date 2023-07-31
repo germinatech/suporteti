@@ -1,0 +1,240 @@
+/* Importando fonte Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-image: url('../images/fundo.png');
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* display: flex; */
+    flex-direction: column;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #FFF;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #ccc;
+    margin-block: 30px;
+    width: 300px;
+}
+
+#logojef{
+    position: absolute;
+    width: 5%;
+    bottom: 10px;
+    left: 48%;
+    z-index: -1;
+}
+
+
+/* Botões de criar problema */
+/* .pbtn {
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    font-size: 180%;
+    border: 2px solid #fff;
+    width: 30%;
+    height: 7rem; 
+    border-radius: 10px;
+    background-color: #002ad8;
+    color: white;
+    margin: 5%;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}*/
+
+.pbtn {
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 2px solid #fff;
+    /* width: 300px;
+    height: 100px; */
+    border-radius: 10px;
+    background-color: #002ad8;
+    color: white;
+    margin: 2%;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.pbtn a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.pbtn:hover {
+    background-color: #00137c;
+}
+
+/* Container contendo a exibição da sala e 'Selecione seu problema' */
+.container{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3,25%);  /* 3 columns */
+    grid-template-rows: repeat(2,100%); /* 3 rows  */
+    grid-gap:40% 5%;
+    /* justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; */
+    /* margin-inline: 10rem;
+    margin-block: 1rem 2rem; */
+    /* width: 100%; */
+}
+
+.containertop{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* position: absolute;
+    top: 110px;
+    width: 100%; */
+}
+
+.column{
+    flex-direction: column;
+}
+
+#sala{
+    /* display: flex;
+    border-radius: 15px;
+    text-align: left;*/
+    background-color: #002ad8;
+    border: 1.5px solid #fff;
+    width: 30%; 
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 1.2em;
+}
+
+/* Contador */
+#contador{
+    display: inline;
+    position: absolute;
+    bottom: 0px;
+}
+#contador p{
+    display: none;
+    font-size: 150%;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Pop-Up */
+#popup{
+    width: 20%;
+    height: 25%;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    display: none;
+    transition: transform 0.4s, top 0,4s;
+    animation: popupAnimation 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes popupAnimation {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.1);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+#popup img {
+    width: 20%;
+    margin-top: -10%;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#popup h2{
+    font-size: 38px;
+    font-weight: 50px;
+    margin: 30px 0 10px;
+}
+
+#popup p{
+    font-size: 20px;
+}
+
+#popup button{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 0;
+    background-color: #009fe3;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+
+} 
+
+@media (max-width: 1250px){
+    #contador{
+        display: none;
+    }
+}
+/* tablet  */
+@media (max-width: 768px){
+    /* .pbtn{
+        font-size: 100%;
+        width: 40%;
+        height: 5rem; 
+    } */
+    #sala{
+        text-align: center;
+        width: 160px;
+        margin-top: 2rem;
+        border: 1.5px solid #fff;
+        font-size: 15px;
+        height: 15px;
+    }
+
+    
+    /* img{
+        margin-top: 10px;
+        width: 35%;
+        height: 35%;
+    } */
+    h1{
+        margin-top: 2rem;
+        font-size: 23px
+    }
+    hr{
+        border-top: 1px solid #fff;
+    }
+    /* .container{
+        margin-bottom: 0rem;
+        margin-inline: 4rem;
+    } */
+}

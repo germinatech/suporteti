@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.75">
+    <title>Suporte TI</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/indexStyle.css">
+</head>
+<body>
+    <!--Criando topo do site-->
+    <div id="conteinertop">
+        <h2 id="sala">texto_base</h2>
+        <h1>Selecione seu problema</h1>
+    </div>
+
+    <hr>
+
+    <!--Botões-->
+    <div class="container">
+        <button class="pbtn" id="som" onclick="enviarProblema('Som')">Som</button>
+        <button class="pbtn" id="video" onclick="enviarProblema('Vídeo')">Vídeo</button>
+        <button class="pbtn" id="projeção" onclick="enviarProblema('Projeção')">Projeção</button>
+        <button class="pbtn" id="zoom" onclick="enviarProblema('Zoom')">Zoom</button>
+        <button class="pbtn" id="outros" onclick="enviarProblema('Outros')">Outros</button>
+        <button class="pbtn" id="duvidas" onclick="enviarProblema('Dúvidas')">Dúvidas</button>
+    </div>
+
+    <!-- Criando Pop-Up -->
+    <div id="popup">
+        <img src="images/Check.png" alt="">
+        <h2>Problema registrado!</h2>
+        <p>Problema registrado com sucesso! Alguém da nossa equipe irá na sua sala em até 5min.</p>
+        <button id="btnpopup" onclick="fecharPopup()">Ok</button>
+    </div>
+
+    <div id="contador">
+        <p id="textoContador">Você pode chamar a TI novamente em: 10min</p>
+    </div>
+
+    <!--Imagem-->
+    <img src="images/institutojef.png" alt="logoInstituto" id="logojef">
+    
+    <!--Adicionando SCRIPT-->
+    <script src="js/indexScript.js"></script>
+</body>
+</html>
