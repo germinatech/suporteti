@@ -22,7 +22,7 @@ function capturarLogin(event) {
   const codigo = document.querySelector('#acesscode').value
   
   //Lista dos complementos possiveis (salas existentes)
-  const salas = ['T1', 'T2', 'T3', 'T4', 'T5','P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'P10', 'P11', 'P12', 'P13', 'P14','S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'S10', 'S11', 'S12', 'S13', 'S14'];
+  const salas = ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'P10', 'P11', 'P12', 'P13', 'P14','S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'S10', 'S11', 'S12', 'S13', 'S14'];
 
   //Cria possibilidades de senha para cada item da lista
   for (const sala of salas) {
