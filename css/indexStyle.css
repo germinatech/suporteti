@@ -32,9 +32,9 @@ hr {
 
 #logojef{
     position: absolute;
-    width: 5%;
+    width: 20%;
     bottom: 10px;
-    left: 48%;
+    left: 40.7%;
     z-index: -1;
 }
 
@@ -117,7 +117,7 @@ hr {
     text-align: left;*/
     background-color: #002ad8;
     border: 1.5px solid #fff;
-    width: 30%; 
+    width: 12%; 
     padding: 0.5rem 1rem;
     margin: 1rem;
     color: #fff;
@@ -139,8 +139,8 @@ hr {
 
 /* Pop-Up */
 #popup{
-    width: 40%;
-    height: 50%;
+    width: 30%;
+    
     background: #fff;
     border-radius: 6px;
     position: absolute;
