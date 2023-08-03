@@ -26,7 +26,7 @@ const criarProblema = problema => {
   };
 
   //Enviando a mensagem a planilha
-  fetch("https://sheetdb.io/api/v1/lqi7j210uf2du", //Link da planilha do sheetSB do google sheets 
+  fetch("https://sheetdb.io/api/v1/s43vascv96nsa", //Link da planilha do sheetSB do google sheets 
   { 
     method: 'POST',
     headers: {
