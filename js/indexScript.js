@@ -16,13 +16,15 @@ const criarProblema = problema => {
   var horario = dataHoraAtual.getHours() + ":" + dataHoraAtual.getMinutes() + ":" + dataHoraAtual.getSeconds();
   var mes = dataHoraAtual.getMonth()+1
   var data = dataHoraAtual.getDate() + "/" + mes + "/" + dataHoraAtual.getFullYear();
+  var msg = "chamado enviado pelo Site Suporte TI"
   
   //Criando a mensagem que será enviada á planilha
   const mensagem = {
     Sala: sala,
     Problema: problema,
     Hora: horario,
-    Data: data
+    Data: data, 
+    Aviso: msg
   };
 
   //Enviando a mensagem a planilha
