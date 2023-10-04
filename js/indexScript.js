@@ -24,7 +24,8 @@ const criarProblema = problema => {
     Problema: problema,
     Hora: horario,
     Data: data, 
-    Aviso: msg
+    Aviso: msg,
+    Mes: mes
   };
 
   //Enviando a mensagem a planilha
