@@ -1,107 +1,35 @@
-//Variaveis e constantes
-const popup = document.querySelector("#popup")
-const pcont = document.querySelector("#textoContador")
-const cooldownChamado = 30 //Variavel que dita o tempo do cooldown (em segundos)
-//Muda o texto do elemento com id #sala para mostrar qual sala o usuário está
-document.querySelector('#sala').textContent = `Você está na sala: ${localStorage.getItem('sala')}`
+//Função para capturar os dados do login e valida-los 
+function capturarLogin(event) {
+  const handleLogin = complemento => {
+    //Cria as senhas
+    const basePass = 'sala.'
+    const password = basePass+complemento
+    
+    //Valida a senha
+    if (codigo === password){
+      localStorage.setItem('auth', '1')
 
-// Funções
-//Função para criar problema e envia-lo á uma planilha, recebe como parametro um problema
-const criarProblema = problema => {
-  //Capturando a sala pelo parametro da URL
-  const sala = localStorage.getItem('sala')
+      //Abre a pagina principal
+      window.open('index.html', '_blank');
 
-  //Armazenando data e hora atual
-  var dataHoraAtual = new Date();
-  var horario = dataHoraAtual.getHours() + ":" + dataHoraAtual.getMinutes() + ":" + dataHoraAtual.getSeconds();
-  var mes = dataHoraAtual.getMonth()+1
-  var data = dataHoraAtual.getDate() + "/" + mes + "/" + dataHoraAtual.getFullYear();
+      //Salva a sala em uma variavel no localStorage
+      localStorage.setItem('sala', complemento.toUpperCase())
+    }
+}
+  event.preventDefault();
+
+  //Captura o valor que o usuário coloca na pagina de login
+  const codigo = document.querySelector('#acesscode').value
   
-  //Criando a mensagem que será enviada á planilha
-  const mensagem = {
-    Sala: sala,
-    Problema: problema,
-    Hora: horario,
-    Data: data
-  };
+  //Lista dos complementos possiveis (salas existentes)
+  const salas = ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'P10', 'P11', 'P12', 'P13', 'P14','S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'S10', 'S11', 'S12', 'S13', 'S14', 'Teste'];
 
-  //Enviando a mensagem a planilha
-  fetch("https://sheetdb.io/api/v1/s43vascv96nsa", //Link da planilha do sheetSB do google sheets 
-  { 
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(mensagem)
-  })
+  //Cria possibilidades de senha para cada item da lista
+  for (const sala of salas) {
+    handleLogin(sala);
+  }
 
-  //Tratando possiveis erros
-    .then(response => {
-      if (response.ok) {
-        console.log('Problema criado com sucesso!');
-      } else {
-        console.error('Erro ao criar o problema:', response.status);
-      }
-    })
-    .catch(error => {
-      console.error('Erro na solicitação:', error);
-    });
 }
 
-const contador = () => {
-  let cont = 0;
-  pcont.style.display = 'block';
-  // Definir o intervalo para aumentar o contador a cada 1 segundo
-  const interval = setInterval(() => {
-    cont++;
-
-    //Calcula o tempo
-    tempo = cooldownChamado-cont
-    minutos = Math.floor(tempo/60)
-    segundos = tempo%60
-
-    // Mostrar o contador atualizado
-    pcont.textContent = `Você pode chamar a TI novamente em: ${minutos}min ${segundos}s`
-
-    // Se o contador atingir 10 minutos (600s), para o intervalo
-    if (cont === cooldownChamado) {
-      clearInterval(interval);
-      pcont.style.display = 'none'
-    }
-  }, 1000);
-}
-// Função para mostrar pop-up
-const abrirPopup = () =>  popup.style.display = 'block';
-const fecharPopup = () => popup.style.display = 'none'
-
-//Criando função para cooldown. A função atualiza uma variável do armazenamento local chamada authProblema. Ela define o valor como 1.
-const cooldown = () => {
-  localStorage.setItem('authProblema', '1')
-}
-
-const enviarProblema = (mensagem) => {
-  //Define um intervalo para não dar bug
-  setTimeout(() => {
-    //Verifica se pode enviar o problema
-    if (localStorage.getItem('authProblema') === '1') {
-      //Cria o problema e mostra o popup
-      criarProblema(mensagem);
-      abrirPopup();
-      contador()
-
-      //Reseta o autenticador do envio de problemas
-      localStorage.setItem('authProblema', '0');
-    }
-  }, 100);
-}
-
-//Define inicialmente o valor de authProblema como 1.
-cooldown()
-
-//A cada 1min, executa a função cooldown.
-setInterval(cooldown, cooldownChamado*1000+3000);
-
-//Verifica se o usuário fez login
-if (localStorage.getItem('auth') !== '1'){
-  window.location.href = 'login.html'
-}
+// Adiciona função para quando clicar no botão de submit capturar login
+document.querySelector('#subLogin').addEventListener('click', capturarLogin);
